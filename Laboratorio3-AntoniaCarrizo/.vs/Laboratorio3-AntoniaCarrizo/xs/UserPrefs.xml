@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{3A8274C0-1EC7-4D17-8DCD-F1FFF41AE3C0}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Laboratorio3-AntoniaCarrizo/Program.cs">
+    <Files>
+      <File FileName="Laboratorio3-AntoniaCarrizo/Program.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Laboratorio3-AntoniaCarrizo FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|anycpu" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
