@@ -213,6 +213,10 @@ namespace Laboratorio3AntoniaCarrizo
                 if (option == "10")
                 {
                     Console.WriteLine("Ha ingresado a la simulacion: ");
+                    //Clientes random
+                   // Client cli = new Client(a, b, d, e, f);
+                   
+                    
                 }
 
 
