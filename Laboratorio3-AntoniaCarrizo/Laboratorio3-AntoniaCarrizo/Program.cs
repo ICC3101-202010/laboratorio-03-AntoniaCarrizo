@@ -10,6 +10,7 @@ namespace Laboratorio3AntoniaCarrizo
             Client c = new Client();
             Employee e = new Employee();
             Product p = new Product();
+            Purchase r = new Purchase();
 
             //Agregar clientes
             for (int i = 1; i <= 30; i++)
@@ -38,7 +39,7 @@ namespace Laboratorio3AntoniaCarrizo
 
 
                 //menu
-                Console.WriteLine("Opciones: \n 1)Ver clientes \n 2)Agregar Clientes \n 3)Ver empleados \n 4)Agregar Empleados \n 5)Modificar empleados \n 6)Ver productos \n 7)Agregar Productos \n 4)Carro de compras");
+                Console.WriteLine("Opciones: \n 1)Ver clientes \n 2)Agregar Clientes \n 3)Ver empleados \n 4)Agregar Empleados \n 5)Modificar empleados \n 6)Ver productos \n 7)Agregar Productos \n 8)Realizar Compra \n 9)Ver detalle de las compras \n 10)Simulacion \n 11)Salir");
                 string option = Console.ReadLine();
 
                 if (option == "1")
@@ -136,6 +137,93 @@ namespace Laboratorio3AntoniaCarrizo
                     Product product = new Product(nombre, price, sto, marca, cod);
                     p.AgregarProducto(product);
 
+                }
+                if (option == "8")
+                {
+             
+                    Console.WriteLine("Agregue sus datos para identificarse como cliente: \n 1)Rut \n 2)Nombre \n 3)Apellido \n 4)Fecha de Nacimiento \n 5)Nacionalidad");
+                    string rut = Console.ReadLine();
+                    string nombre = Console.ReadLine();
+                    string apellido = Console.ReadLine();
+                    string fecha = Console.ReadLine();
+                    string nacionalidad = Console.ReadLine();
+                    Client client1 =new Client(rut, nombre, apellido, fecha, nacionalidad);
+
+
+                    Console.WriteLine("Inserte los datos del cajero: \n 1)Rut \n 2)Nombre \n 3)Apellido \n 4)Fecha de Nacimiento \n 5)Nacionalidad \n 6)Salario \n 7)Horario");
+
+                    string ruti = Console.ReadLine();
+                    string nombrei = Console.ReadLine();
+                    string apellidoi = Console.ReadLine();
+                    string fechai = Console.ReadLine();
+                    string nacionalidadi = Console.ReadLine();
+                    string salario = Console.ReadLine();
+                    string horario = Console.ReadLine();
+                    int sal = int.Parse(salario.ToString());
+                    Employee employee1 = new Employee("cajero", sal, horario, ruti, nombrei, apellidoi, fechai, nacionalidadi);
+
+                    Console.WriteLine("\n Cuantos productos desea comprar?: ");
+                    string num = Console.ReadLine();
+                    int numero = int.Parse(num.ToString());
+
+                    for(int i = 0; i<numero;)
+                    {
+                        Console.WriteLine("Ingrese: \n 1)Nombre del producto \n 2)Marca del producto \n 3)Cantidad que comprara");
+                        string nombreproducto = Console.ReadLine();
+                        string marcaproducto = Console.ReadLine();
+                        string n = Console.ReadLine();
+                        int cantidadcomprar = int.Parse(n.ToString());
+                        
+                        
+                        if (p.CarroCompra(nombreproducto, marcaproducto, cantidadcomprar) == false)
+                        {
+                            Console.WriteLine("vuelva a ingresar otro");
+                        }
+                        else
+                        {
+                            p.CambiarStock(cantidadcomprar, nombreproducto, marcaproducto);
+                            i++;
+                        }
+
+                    }
+
+                    Console.WriteLine("\n El stock actualizado es : ");
+                    p.VerProductos();
+
+
+                    Console.WriteLine("\n Su carro de compra es: ");
+                    p.VerCompra();
+
+                    Console.WriteLine("\n Desea realizar la compra: (si o no) ");
+                    string opti = Console.ReadLine();
+                    r.RealizarCompra(opti,p.Productoscomprados(),client1,employee1);
+
+
+
+
+
+
+
+
+                }
+                if (option == "9")
+                {
+                    r.VerTodaslascompras();
+                }
+                if (option == "10")
+                {
+                    Console.WriteLine("Ha ingresado a la simulacion: ");
+                }
+
+
+                if (option == "11")
+                {
+                    break;
+                }
+                if (option != "1" && option != "2" && option != "3" && option != "4" && option != "5" && option != "6" && option != "7" && option != "8" && option != "9" && option != "10" && option != "11" )
+                {
+                    Console.WriteLine("Opcion no valida, vuelva a ingresarla");
+                    
                 }
 
 
