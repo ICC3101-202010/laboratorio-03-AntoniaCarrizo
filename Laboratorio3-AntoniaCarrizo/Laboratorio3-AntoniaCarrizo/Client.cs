@@ -43,7 +43,7 @@ namespace Laboratorio3AntoniaCarrizo
             int n = 0;
             for (int i = 0; i < listclient.Count; i++)
             {   
-                Console.WriteLine(n+") "+listclient[i].Rut() + "-" + listclient[i].Name());
+                Console.WriteLine(n+") Rut: "+listclient[i].Rut() + "- Nombre:" + listclient[i].Name()+"- Apellido: " + listclient[i].Lastname()+ "- Nacimiento: " + listclient[i].Datebirth()+ "- Nacionalidad: " + listclient[i].Nationality());
                 n++;
             }
         }

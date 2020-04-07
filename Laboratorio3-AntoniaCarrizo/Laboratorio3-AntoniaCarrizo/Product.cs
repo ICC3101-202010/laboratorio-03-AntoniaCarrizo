@@ -81,7 +81,7 @@ namespace Laboratorio3AntoniaCarrizo
             int n = 1;
             for (int i = 0; i < listproduct.Count; i++)
             {
-                Console.WriteLine(n + ") " + listproduct[i].Codigoproducto() + "-" + listproduct[i].NameProduct() + " - Marca: "+listproduct[i].Brand()+" - Stock: " + listproduct[i].Stock());
+                Console.WriteLine(n + ") " + "Codigo: "+listproduct[i].Codigoproducto() + "- Nombre:" + listproduct[i].NameProduct() + " - Marca: "+listproduct[i].Brand() + "- Precio: " + listproduct[i].Price() + " - Stock: " + listproduct[i].Stock());
                 n++;
             }
         }
@@ -157,7 +157,7 @@ namespace Laboratorio3AntoniaCarrizo
                 preciototal += productoscomprados[i].Price()* productoscomprados[i].Stock();
                 n++;
             }
-            Console.WriteLine("\n Precio total: " + preciototal);
+            Console.WriteLine("\n Precio total boleta: " + preciototal);
         }
 
         public void VaciarCarro()

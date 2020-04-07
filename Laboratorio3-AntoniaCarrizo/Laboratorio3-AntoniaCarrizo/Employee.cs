@@ -65,8 +65,11 @@ namespace Laboratorio3AntoniaCarrizo
         {
             int n = 1;
             for (int i = 0; i < listemployee.Count; i++)
-                Console.WriteLine(n+")"+listemployee[i].Rut() + "-" + listemployee[i].Name());
+            {
+                Console.WriteLine(n + ") Rut: " + listemployee[i].Rut() + "- Nombre: " + listemployee[i].Name() + "- Apellido: " + listemployee[i].Lastname() + "- Nacimiento: " + listemployee[i].Datebirth() + "- Nacionalidad: " + listemployee[i].Nationality() + "- Empleo: " + listemployee[i].Job() + "- Salario: " + listemployee[i].Salary() + "- Horario trabajo: " + listemployee[i].Timetable());
                 n++;
+            }
+
             
         }
         
