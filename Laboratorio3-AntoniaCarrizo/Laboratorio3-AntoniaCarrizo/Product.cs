@@ -7,7 +7,7 @@ namespace Laboratorio3AntoniaCarrizo
     {
         private List<Product> listproduct = new List<Product>();
         private List<Product> productoscomprados = new List<Product>();
-        
+
         private string nameProduct;
         private int price;
         private int stock;
@@ -115,8 +115,8 @@ namespace Laboratorio3AntoniaCarrizo
 
         public bool CarroCompra(string nombreproducto, string marcaproducto, int cantidadcomprar)
         {
-
-            for (int i = 0; i < listproduct.Count;)
+           
+;            for (int i = 0; i < listproduct.Count;)
             {
                 if (listproduct[i].NameProduct() == nombreproducto && listproduct[i].Brand() == marcaproducto)
                 {
@@ -150,11 +150,24 @@ namespace Laboratorio3AntoniaCarrizo
         public void VerCompra()
         {
             int n = 1;
+            int preciototal = 0;
             for (int i = 0; i < productoscomprados.Count; i++)
             {
-                Console.WriteLine(n + ") " + productoscomprados[i].NameProduct() + "-" + productoscomprados[i].Brand() + "- Cantidad: " + productoscomprados[i].Stock());
+                Console.WriteLine(n + ") " + productoscomprados[i].NameProduct() + "-" + productoscomprados[i].Brand() + "- Cantidad: " + productoscomprados[i].Stock() + "- Precio: " + productoscomprados[i].Price());
+                preciototal += productoscomprados[i].Price()* productoscomprados[i].Stock();
                 n++;
             }
+            Console.WriteLine("\n Precio total: " + preciototal);
         }
+
+        public void VaciarCarro()
+        {
+            for (int i = 0; i < productoscomprados.Count; i++)
+            {
+                if (i % 5 == 0)
+                    productoscomprados.RemoveAt(i);
+            }
+        }
+
     }
 }

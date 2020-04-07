@@ -191,13 +191,13 @@ namespace Laboratorio3AntoniaCarrizo
                     p.VerProductos();
 
 
-                    Console.WriteLine("\n Su carro de compra es: ");
+                    Console.WriteLine("\n Su compra ha sido realizada: ");
                     p.VerCompra();
 
-                    Console.WriteLine("\n Desea realizar la compra: (si o no) ");
-                    string opti = Console.ReadLine();
-                    r.RealizarCompra(opti,p.Productoscomprados(),client1,employee1);
+                   
+                    r.RealizarCompra(p.Productoscomprados(),client1,employee1);
 
+                    p.VaciarCarro();
 
 
 

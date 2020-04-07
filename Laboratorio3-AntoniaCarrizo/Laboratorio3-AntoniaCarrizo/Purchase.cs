@@ -47,25 +47,11 @@ namespace Laboratorio3AntoniaCarrizo
 
 
 
-        public void RealizarCompra(string sino,List<Product>carro,Client client,Employee employee)
+        public void RealizarCompra(List<Product>carro,Client client,Employee employee)
         {
-            /* En esta parte tengo que ver como traer la lista de productos del carro de compras del cliente
-             * Tambien hay que agregar el cliente y el empleado s
-             */
-
-            if (sino == "si" || sino == "Si" || sino == "sI" || sino == "SI")
-            {
-                
-                Purchase purchase = new Purchase(client,employee, carro, DateTime.Now);
-                todasCompras.Add(purchase);
-                
-            }
-            else
-            {
-                Console.WriteLine("Compra NO realizada");
-
-            }
             
+                Purchase purchase = new Purchase(client,employee, carro, DateTime.Now);
+                todasCompras.Add(purchase);      
         }
         
 
@@ -73,6 +59,8 @@ namespace Laboratorio3AntoniaCarrizo
         {
             if (todasCompras.Count > 0)
             {
+                Console.WriteLine("Numero de compras: " + todasCompras.Count);
+                /*
                 int n = 1;
                 for (int i = 0; i < todasCompras.Count; i++)
                 {
@@ -94,11 +82,11 @@ namespace Laboratorio3AntoniaCarrizo
                     }
 
                 }
-
+                */
             }
             else
             {
-                Console.WriteLine("No hay ninguna compra");
+                Console.WriteLine("No hay compras");
             }
         }
 
